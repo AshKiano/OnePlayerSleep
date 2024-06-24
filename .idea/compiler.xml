@@ -9,8 +9,5 @@
         <module name="OnePlayerSleep" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OnePlayerSleep" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
