@@ -6,7 +6,7 @@
 
     <groupId>com.ashkiano</groupId>
     <artifactId>OnePlayerSleep</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
     <packaging>jar</packaging>
 
     <name>OnePlayerSleep</name>
@@ -72,11 +72,6 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
 
-        <!-- UpdateChecker -->
-        <repository>
-            <id>jeff-media-public</id>
-            <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -96,12 +91,10 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Update Checker -->
         <dependency>
-            <groupId>com.jeff_media</groupId>
-            <artifactId>SpigotUpdateChecker</artifactId>
-            <version>3.0.3</version>
-            <scope>compile</scope>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
         </dependency>
     </dependencies>
 </project>
