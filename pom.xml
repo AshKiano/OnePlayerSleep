@@ -6,7 +6,7 @@
 
     <groupId>com.ashkiano</groupId>
     <artifactId>OnePlayerSleep</artifactId>
-    <version>1.5</version>
+    <version>1.6</version>
     <packaging>jar</packaging>
 
     <name>OnePlayerSleep</name>
@@ -95,6 +95,13 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20231013</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ashkiano</groupId>
+            <artifactId>ashlib</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/AshLib-1.0.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

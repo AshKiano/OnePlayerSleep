@@ -1,5 +1,6 @@
 package com.ashkiano.oneplayersleep;
 
+import com.ashkiano.ashlib.PluginStatistics;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,6 +8,7 @@ import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.json.JSONObject;
 
@@ -19,6 +21,14 @@ public class OnePlayerSleep extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        //TODO tuto chybu vypisovat i OP hráčům do chatu
+        if (!isAshLibPresent()) {
+            getLogger().severe("AshLib plugin is missing! Please download and install AshLib to run GMSpVoucher. (can be downloaded from: https://www.spigotmc.org/resources/ashlib.118282/ )");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+        new PluginStatistics(this);
+
         getServer().getPluginManager().registerEvents(this, this);
 
         new Metrics(this, 21209);
@@ -92,5 +102,10 @@ public class OnePlayerSleep extends JavaPlugin implements Listener {
         } catch (Exception e) {
             this.getLogger().warning("Failed to check for updates. Error: " + e.getMessage());
         }
+    }
+
+    private boolean isAshLibPresent() {
+        Plugin plugin = Bukkit.getPluginManager().getPlugin("AshLib");
+        return plugin != null && plugin.isEnabled();
     }
 }
