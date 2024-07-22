@@ -3,3 +3,5 @@ version: '${project.version}'
 main: com.ashkiano.oneplayersleep.OnePlayerSleep
 api-version: '1.20'
 authors: [ AshKiano, BitByLogic ]
+#it is really dependent on AshLib, but cannot be there because i want a custom missing library message
+#depend: [AshLib]

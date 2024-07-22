@@ -1,5 +1,5 @@
 name: OnePlayerSleep
-version: '1.5'
+version: '1.6'
 main: com.ashkiano.oneplayersleep.OnePlayerSleep
 api-version: '1.20'
 authors: [ AshKiano, BitByLogic ]
