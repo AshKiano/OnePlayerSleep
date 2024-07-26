@@ -17,31 +17,20 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+//TODO opravit nefunkčnost propojení s AshLib na 1.21
 public class OnePlayerSleep extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
         //TODO tuto chybu vypisovat i OP hráčům do chatu
         if (!isAshLibPresent()) {
-            getLogger().severe("AshLib plugin is missing! Please download and install AshLib to run GMSpVoucher. (can be downloaded from: https://www.spigotmc.org/resources/ashlib.118282/ )");
+            getLogger().severe("AshLib plugin is missing! Please download and install AshLib to run OnePlayerSleep. (can be downloaded from: https://www.spigotmc.org/resources/ashlib.118282/ )");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
         new PluginStatistics(this);
 
         getServer().getPluginManager().registerEvents(this, this);
-
-        new Metrics(this, 21209);
-
-        // Print the donation message to the console
-        Bukkit.getScheduler().runTaskLater(this, () -> {
-            Bukkit.getConsoleSender().sendMessage(
-                    ChatColor.GOLD + "Thank you for using the OnePlayerSleep plugin!",
-                    ChatColor.GOLD + "If you enjoy using this plugin!",
-                    ChatColor.GOLD + "Please consider making a donation to support the development!",
-                    ChatColor.GOLD + "You can donate at: " + ChatColor.GREEN + "https://donate.ashkiano.com"
-            );
-        }, 20);
 
         checkForUpdates();
     }
